@@ -58,16 +58,15 @@ WSGI_APPLICATION = 'mysql_tunnel_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_extra.db.backends.mysql_tunnel',
-        'NAME': 'lucky_draw',
-        'USER': 'lucky_draw',
-        'PASSWORD': 'dbbar_lucky_draw',
-        'HOST': '10.19.148.176',
+        'NAME': 'name',
+        'USER': 'name',
+        'PASSWORD': 'password',
+        'HOST': 'host',
         'PORT': '3306',
-        'CONN_MAX_AGE': 25,
         'TUNNEL_CONFIG': {
-            'ssh_address_or_host': ('dbb01.dbbar.net', 1434),
-            'ssh_username': 'dbb',
-            'ssh_password': 'cqkdczyJzmd',
+            'ssh_address_or_host': ('port', 22),
+            'ssh_username': 'usename',
+            'ssh_password': 'password',
         }
     },
 }
