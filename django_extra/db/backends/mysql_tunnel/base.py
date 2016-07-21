@@ -20,6 +20,8 @@ class DatabaseWrapper(MysqlDatabaseWrapper):
         config = self.settings_dict["TUNNEL_CONFIG"]
         config['remote_bind_address'] = (host, port)
         self.tunnel = SSHTunnelForwarder(**config)
+        self.tunnel.daemon_forward_servers = True
+        self.tunnel.daemon_transport = True
         self.tunnel.start()
         kwargs["host"] = '127.0.0.1'
         kwargs['port'] = self.tunnel.local_bind_port
